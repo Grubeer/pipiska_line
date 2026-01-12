@@ -3,6 +3,7 @@ const lengthValue = document.getElementById("lengthValue");
 const measure = document.getElementById("measure");
 const rulerTrack = document.querySelector(".ruler-track");
 const floaters = document.querySelector(".floaters");
+const factText = document.getElementById("factText");
 const floaterEmojis = ["🍆", "💫", "✨", "💜", "🩷"];
 
 const updateMeasure = () => {
@@ -44,3 +45,24 @@ const createFloaters = (count = 18) => {
 };
 
 createFloaters();
+
+const loadFactOfTheDay = async () => {
+  if (!factText) return;
+
+  try {
+    const response = await fetch("facts.json", { cache: "no-store" });
+    if (!response.ok) {
+      throw new Error("Не удалось загрузить факты.");
+    }
+
+    const facts = await response.json();
+    if (Array.isArray(facts) && facts.length > 0) {
+      const randomFact = facts[Math.floor(Math.random() * facts.length)];
+      factText.textContent = randomFact;
+    }
+  } catch (error) {
+    console.error("Ошибка загрузки факта дня:", error);
+  }
+};
+
+loadFactOfTheDay();
