@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Пиписька Лайн — измерь стильно</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="glow"></div>
+    <div class="floaters" aria-hidden="true"></div>
+    <main class="page">
+      <header class="hero">
+        <p class="badge">💫 Пиписька Лайн</p>
+        <h1>Линейка для измерения пиписьки</h1>
+        <p class="subtitle">
+          Крутой дизайн, максимум уверенности и ни миллиметра сомнений.
+        </p>
+      </header>
+
+      <section class="panel">
+        <div class="controls">
+          <label for="length" class="label">Длина, см</label>
+          <div class="control-row">
+            <input
+              id="length"
+              type="range"
+              min="1"
+              max="25"
+              value="13"
+              step="0.5"
+            />
+            <span class="value" id="lengthValue">13.0 см</span>
+          </div>
+        </div>
+
+        <div class="ruler" aria-hidden="true">
+          <div class="ruler-track">
+            <div class="ticks">
+              <span>0</span>
+              <span>5</span>
+              <span>10</span>
+              <span>15</span>
+              <span>20</span>
+              <span>25</span>
+            </div>
+            <div class="measure" id="measure"></div>
+            <div class="shine"></div>
+          </div>
+        </div>
+
+        <div class="tips">
+          <div class="tip">
+            <h3>Подсказка</h3>
+            <p>Двигай ползунок и смотри, как подсветка растёт вместе с настроением.</p>
+          </div>
+          <div class="tip">
+            <h3>Факт дня</h3>
+            <p>Самая крутая линейка — та, что добавляет уверенности и стиля.</p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p>Сделано для хорошего настроения ❤️</p>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
